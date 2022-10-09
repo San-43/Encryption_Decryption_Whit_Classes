@@ -1,0 +1,42 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    import java.util.*;
+    import java.util.stream.Collectors;
+
+    class Age {
+        private final int value;
+
+        public Age(int value) {
+            this.value = value;
+        }
+
+        public int getValue() {
+            return value;
+        }
+    }
+
+    // do not change the code below
+    class Main {
+
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+
+            List<Age> list = Arrays.stream(sc.nextLine().split(" "))
+                    .mapToInt(Integer::parseInt)
+                    .mapToObj(Age::new)
+                    .sorted()
+                    .collect(Collectors.toList());
+
+            Checker.check(list);
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/19393#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 22 Jul 2022 05:08:12 UTC
+record: -1

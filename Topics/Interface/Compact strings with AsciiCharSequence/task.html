@@ -1,0 +1,13 @@
+<h2>Compact strings with AsciiCharSequence</h2>
+<html><body><p></p><div class="alert alert-primary">Wow! This problem is kind of tricky. If you're ready to put your thinking cap on, brace yourself and good luck! Otherwise, you can skip it for now and return any time later</div><p></p>
+<p>Strings in Java implement <code class="java">java.lang.CharSequence</code> interface. Since Java internally uses UTF-16, 2 bytes are required to store each char. At the same time, ASCII encoding allows storing character codes in one byte<em> </em>and includes all Latin letters, digits, and standard special characters. Compared to the standard String class, ASCII-character sequences require half the memory.</p>
+<p>Write a class named <code class="java">AsciiCharSequence</code> for storing ASCII-character sequences, that should:</p>
+<ul>
+<li>implement the interface <code class="java">java.lang.CharSequence</code>;</li>
+<li>have a constructor that takes a byte array;</li>
+<li>have methods <code class="java">int length()</code>, <code class="java">char charAt(int idx)</code>, <code class="java">CharSequence subSequence(int from, int to)</code>, and <code class="java">String toString()</code>.</li>
+</ul>
+<p>You can find the declaration of methods and their behavior in the description of <code class="java">java.lang.CharSequence</code> (<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/CharSequence.html" rel="noopener noreferrer nofollow" target="_blank">JavaDoc</a> or sources).</p>
+<p>Carefully check signatures of abstract methods of <code class="java">java.lang.CharSequence</code> interface, especially <code class="java">subSequence</code> method. It accepts 2 integers: start index (<strong>inclusive</strong>) and end index (<strong>exclusive</strong>). The method returns an object of a class that implements <code class="java">java.lang.CharSequence</code> interface. In this example it will be an instance of <code class="java">AsciiCharSequence</code> class.</p>
+<p><strong>Note:</strong> the testing system will always pass correct input parameters to overridden methods.</p>
+<p>P.S. This feature is supported since Java 9 in standard strings. For details, see <a href="https://www.baeldung.com/java-9-compact-string" rel="noopener noreferrer nofollow" target="_blank">this article on compact strings in Java 9</a>.</p></body></html><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 5 seconds</font><br><br>

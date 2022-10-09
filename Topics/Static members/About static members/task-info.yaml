@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: A static field has the same value for all instances of the class.
+- text: A static method cannot be invoked by an instance method of the same class.
+- text: A static method can access static and non-static fields.
+- text: A static method can be accessed by the class name and doesn't need an object.
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3290#comment
+status: Solved
+record: -1
+local_check: false

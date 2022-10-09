@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: We create an instance of a class in a special place and then return it to
+    the client code.
+- text: We create an instance of a class using a constructor directly inside the client
+    code.
+- text: We create an instance of a class using the special keyword <b>factory</b>.
+- text: We create an instance of a class using the special static methods instead
+    of constructors.
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3460#comment
+status: Solved
+record: -1
+local_check: false

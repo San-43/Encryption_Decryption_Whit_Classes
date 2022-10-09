@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: Leave it as it is, because it is already sorted by models
+- text: Delete the current return value and return getModel().compareTo(otherCar.getModel());
+- text: Save the current return value to a variable res, check if it == 0, add res
+    = getModel().compareTo(otherCar.getModel()); and return res
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14461#comment
+status: Solved
+record: -1
+local_check: false

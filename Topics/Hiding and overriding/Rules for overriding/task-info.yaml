@@ -1,0 +1,25 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: The return type should be the same type or a subtype of the return type declared
+    in the method of the superclass.
+- text: The access level must be the same or more restrictive than the one of the
+    superclass method.
+- text: The method must not have the modifier <b>static</b>.
+- text: The method must not be overloaded.
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2003#comment
+status: Solved
+record: -1
+local_check: false

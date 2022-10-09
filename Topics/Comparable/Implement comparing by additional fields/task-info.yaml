@@ -1,0 +1,34 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    class Article implements Comparable<Article> {
+        private String title;
+        private int size;
+
+        public Article(String title, int size) {
+            this.title = title;
+            this.size = size;
+        }
+
+        public String getTitle() {
+            return this.title;
+        }
+
+        public int getSize() {
+            return this.size;
+        }
+
+        @Override
+        public int compareTo(Article otherArticle) {
+            // add your code here!
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14464#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Mon, 22 Aug 2022 01:55:17 UTC
+record: -1

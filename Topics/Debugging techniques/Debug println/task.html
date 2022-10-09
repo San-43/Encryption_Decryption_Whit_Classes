@@ -1,0 +1,23 @@
+<h2>Debug println</h2>
+
+Look at this code snippet:</p>
+
+<pre><code class="language-java">class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        System.out.println(this);
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "name=" + name + ", age=" + age;
+    }
+}</code></pre>
+
+<p>What will be printed to the console if we create the following <code class="language-java">Person</code> object:</p>
+
+<pre><code class="language-java">Person person = new Person("Test Dummy", -4);</code></pre>

@@ -1,0 +1,22 @@
+type: theory
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3581#comment
+status: Unchecked
+feedback:
+  message: Failed to launch checking. <a href="reload_gradle">Reload Gradle project</a>.
+    For more information, see <a href="https://plugins.jetbrains.com/plugin/10081-edutools/docs/troubleshooting-guide.html#no_tests_have_run">the
+    Troubleshooting guide</a>
+  time: Fri, 07 Oct 2022 02:31:47 UTC
+record: -1
+post_submission_on_open: true

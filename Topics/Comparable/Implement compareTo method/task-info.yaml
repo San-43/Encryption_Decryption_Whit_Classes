@@ -1,0 +1,46 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    class Person implements Comparable<Person> {
+        private String name;
+        private int age;
+        private int height;
+        private int weight;
+
+        public Person(String name, int age, int height, int weight) {
+            this.name = name;
+            this.age = age;
+            this.height = height;
+            this.weight = weight;
+        }
+
+        public String getName() {
+            return this.name;
+        }
+
+        public int getAge() {
+            return this.age;
+        }
+
+        public int getHeight() {
+            return this.height;
+        }
+
+        public int getWeight() {
+            return this.weight;
+        }
+
+        @Override
+        public int compareTo(Person otherPerson) {
+            // add your code here!
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/14463#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Fri, 22 Jul 2022 06:01:40 UTC
+record: -1

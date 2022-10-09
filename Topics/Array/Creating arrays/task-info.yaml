@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: char[] array = { 'a', 'b', 'c', 'd' };
+- text: char[] array = new char[10000000000000];
+- text: char[] array = new char[0];
+- text: char[] array = new char[1];
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2128#comment
+status: Solved
+record: -1
+local_check: false

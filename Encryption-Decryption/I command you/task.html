@@ -1,0 +1,17 @@
+<html><body><h5 id="description">Description</h5>
+<p>Modify the previous program to work with command-line arguments instead of the standard input.</p>
+<p>You need to put it in quotes to pass an argument that contains spaces as a single argument. So <code class="java">"Welcome to hyperskill!"</code> becomes a single <code class="java">Welcome to hyperskill!</code> argument without quotes. You need quotes to pass this argument, but you don't need to remove these quotes in the actual code!</p>
+<h5 id="objectives">Objectives</h5>
+<p>The program must parse three arguments: <code class="java">-mode</code>, <code class="java">-key</code>, and <code class="java">-data</code>. The first argument should determine the program's mode (<code class="java">enc</code> for encryption, <code class="java">dec</code> for decryption). The second argument is an integer key to modify the message, and the third is a text or ciphertext to encrypt/decrypt.</p>
+<p>Arguments are guaranteed to be passed to the program. If, for some reason, they turn out to be wrong:</p>
+<ol>
+<li>If there is no <code class="java">-mode</code>, the program should work in the <code class="java">enc</code> mode;</li>
+<li>If there is no <code class="java">-key</code>, the program should consider that it is <code class="java">0</code>;</li>
+<li>If there is no <code class="java">-data</code>, the program should assume that <code class="java">data</code><strong> </strong>is an empty string.</li>
+</ol>
+<p>Keep in mind that the order of the arguments might be different. For example,<strong> </strong><code class="java">-mode enc</code> maybe at the end, at the beginning, or in the middle of the array.</p>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1:</strong> <em>encryption; the arguments are: -mode enc -key 5 -data "Welcome to hyperskill!"</em></p>
+<pre><code class="language-no-highlight">\jqhtrj%yt%m~ujwxpnqq&amp;</code></pre>
+<p><strong>Example 2:</strong> <em>decryption; the arguments are: -key 5 -data "\jqhtrj%yt%m~ujwxpnqq&amp;" -mode dec</em></p>
+<pre><code class="language-no-highlight">Welcome to hyperskill!</code></pre></body></html>

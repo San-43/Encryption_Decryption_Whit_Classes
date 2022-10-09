@@ -1,0 +1,17 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    class Complex {
+
+        private double real;
+        private double imaginary;
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3022#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 25 Sep 2022 06:34:54 UTC
+record: -1

@@ -1,0 +1,46 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    import java.util.*;
+
+    class Address {
+        private final String city;
+        private final String street;
+        private final String house;
+
+        public Address(String city, String street, String house) {
+            this.city = city;
+            this.street = street;
+            this.house = house;
+        }
+
+        @Override
+        public String toString() {
+            return "%s, %s, %s".formatted(house, street, city);
+        }
+    }
+
+    // do not change the code below
+    class Main {
+
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            List<Address> list = new ArrayList<>();
+
+            while (sc.hasNextLine()) {
+                String[] arguments = sc.nextLine().split(",");
+                list.add(new Address(arguments[0], arguments[1], arguments[2]));
+            }
+            Collections.sort(list);
+            Checker.check(list);
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/19394#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Tue, 27 Sep 2022 04:43:44 UTC
+record: -1

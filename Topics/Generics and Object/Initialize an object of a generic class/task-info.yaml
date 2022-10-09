@@ -1,0 +1,36 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    class Holder<T> {
+        private T value;
+
+        public void set(T value) {
+            this.value = value;
+        }
+
+        public T get() {
+            return value;
+        }
+    }
+
+    class Main {
+        public static void main(String... args) {
+            // initialize an instance of Holder to make the code below compiled
+            Holder...
+
+            // do not change the code below
+            holder.set("This is an instance of String");
+
+            String value = holder.get();
+            System.out.println(value);
+        }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11178#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 17 Jul 2022 03:08:22 UTC
+record: -1

@@ -1,0 +1,35 @@
+<h2>The final characters</h2>
+<p>Here's a class hierarchy containing two classes <code class="language-java">A</code> and <code class="language-java">B</code>.</p>
+
+<pre><code class="language-java">class A {
+    
+    protected int n = 10;
+    protected String s = "abc";
+    protected char ch = 'q';
+    
+    public A(int n) {
+        this.n = n;
+    }
+}
+
+class B extends A {
+    
+    protected int n = 20;
+    protected String s = "str";
+    protected char ch = 'z';
+    
+    public B(int n, String s, char ch) {
+        super(n);
+        this.s = s;
+        super.ch = ch;
+    }
+
+    public void print() {
+        System.out.println(super.n + " " + super.s + " " + ch);
+    }
+}</code></pre>
+
+<p>What string does the following code print? There should be a single whitespace between elements of the string.</p>
+
+<pre><code class="language-java">B b = new B(100, "txt", 'k');
+b.print();</code></pre>

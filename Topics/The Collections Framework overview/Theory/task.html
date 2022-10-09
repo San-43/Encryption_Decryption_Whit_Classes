@@ -1,0 +1,75 @@
+<h2>The Collections Framework overview</h2>
+<html><body><p>Java provides the <strong>collections framework</strong> which consists of classes and interfaces for commonly reusable data structures such as lists, dynamic arrays, sets, and so on. The framework has a unified architecture for representing and manipulating collections, enabling collections to be used independently of implementation details via its interfaces.</p>
+<p>The framework includes:</p>
+<ul>
+<li>interfaces that represent different types of collections;</li>
+<li>primary implementations of the interfaces;</li>
+<li>legacy implementations from earlier releases (known as "old collections");</li>
+<li>special-purpose implementations (like immutable collections);</li>
+<li>algorithms represented by static methods that perform useful operations on collections.</li>
+</ul>
+<p>In this topic, we will only consider the basic interfaces from<em> </em>the collections framework placed in the <code class="language-java">java.util</code> package.</p>
+<h5 id="commonly-used-interfaces" style="text-align: center;">Commonly used interfaces</h5>
+<p>There are two root generic interfaces <code class="language-java">Collection&lt;E&gt;</code> and <code class="language-java">Map&lt;K,V&gt;</code>, and some more specific interfaces to represent different types of collections.</p>
+<p style="text-align: center;"><strong><img alt="" height="414px" src="https://ucarecdn.com/7592c5a5-1adb-4f91-8a83-15e0c6dfbe4b/" width="746px"/></strong></p>
+<p>The interface <code class="language-java">Collection&lt;E&gt;</code> represents an abstract collection, which is a container for objects of the same type. It provides some common methods for all other types of collections.</p>
+<p>The interfaces <code class="language-java">List&lt;E&gt;</code>, <code class="language-java">Set&lt;E&gt;</code>, <code class="language-java">Queue&lt;E&gt;</code>, <code class="language-java">SortedSet&lt;E&gt;</code>, and <code class="language-java">Deque&lt;E&gt;</code> represent different types of collections. You cannot directly create an object of them since they are just interfaces. But each of them has several implementations. As an example, the <code class="language-java">ArrayList</code> class, that represents a resizable array, is a primary representation of the <code class="language-java">List&lt;E&gt;</code> interface. Other interfaces, as well as their implementations, will be considered in the following topics.</p>
+<p>Another root interface is <code class="language-java">Map&lt;K,V&gt;</code> that represents a map (or dictionary) for storing <em>key-value pairs</em> where <code class="language-java">K</code> is the type of <span style="color: #ff4363;"><span style="color: #000000;">keys</span> </span>and <code class="language-java">V</code> is the type of stored <span style="color: #000000;">values.</span> In the real world, a good example of a map is a phone book where keys are names of your friends and values are their phones. The <code class="language-java">Map&lt;K,V&gt;</code> interface <strong>is not </strong>a subtype of the <code class="language-java">Collection</code> interface, but maps are often considered as collections since they are part of the collection framework and have similar methods.</p>
+<p></p><div class="alert alert-primary">Note, the <code class="language-java">Collection</code> and <code class="language-java">Map</code> interfaces do not extend each other.</div><p></p>
+<h5 id="the-collection-interface" style="text-align: center;">The Collection interface</h5>
+<p>Here are common methods provided by the <code class="language-java">Collection</code> interface.</p>
+<ul>
+<li><code class="language-java">int size()</code> returns the number of elements in this collection;</li>
+<li><code class="language-java">boolean isEmpty()</code> returns <code class="language-java">true</code> if this collection contains no elements;</li>
+<li><code class="language-java">boolean contains(Object o)</code> returns <code class="language-java">true</code> if this collection contains the specified element;</li>
+<li><code class="language-java">boolean add(E e)</code> adds an element to the collection. Returns <code class="language-java">true</code>, if the element was added, else returns <code class="language-java">false</code>;</li>
+<li><code class="language-java">boolean remove(Object o)</code>  removes a single instance of the specified element;</li>
+<li><code class="language-java">boolean removeAll(Collection&lt;?&gt; collection)</code> removes elements from this collection that are also contained in the specified collection;</li>
+<li><code class="language-java">void clear()</code> removes all elements from this collection.</li>
+</ul>
+<p>It is possible to refer to any particular collection via this base interface since, as you know, the superclass can be used to refer to any subclass object derived from that superclass.</p>
+<p>Let's create <code class="language-java">languages</code> collection and add three elements to it:</p>
+<pre><code class="language-java">Collection&lt;String&gt; languages = new ArrayList&lt;&gt;();
+
+languages.add("English");
+languages.add("Deutsch");
+languages.add("Français");
+
+System.out.println(languages.size()); // 3</code></pre>
+<p>This approach allows you to replace the concrete collection at any time without changing the code that uses it. It also fosters software reuse by providing a standard interface for collections and algorithms to manipulate them. It may sound complicated now, but the more you work with collections, the more understandable it will become.</p>
+<p>It is impossible to get an element by index via the <code class="language-java">Collection</code> interface because it is very abstract and does not provide such a method. But if it doesn't matter for you which particular collection to use, you can work via this interface.</p>
+<p></p><div class="alert alert-warning">It is important to understand that the order of the elements in the <code class="language-java">ArrayList</code> is still preserved. We simply cannot call the <code class="language-java">get</code> method via the <code class="language-java">Collection</code> interface.</div><p></p>
+<p>Every collection can be cast to a string by using <code class="language-java">toString</code> and compared with another collection using the <code class="language-java">equals</code> method. These methods come from <code class="language-java">Object</code> and their behavior depends on elements stored in the collection and the type of the collection itself.</p>
+<h5 id="mutable-and-immutable-collections" style="text-align: center;">Mutable and Immutable collections</h5>
+<p>All collections can be divided into two large groups: mutable and immutable. They both implement the <code class="language-java">Collection&lt;E&gt;</code> interface, but immutable collections will throw <code class="language-java">UnsupportedOperationException</code> when trying to invoke some methods which change them: for example, <code class="language-java">add</code>, <code class="language-java">remove</code>, <code class="language-java">clear</code>.</p>
+<p>In the next topics, we will consider how to create and when to use immutable collections. Now just remember that they are present here.</p>
+<h5 id="iterating-over-collections" style="text-align: center;">Iterating over collections</h5>
+<p>If you would like to iterate over all elements of <em>any </em>collection, you can use the <em>for-each</em> style loop. Let's return to our <code class="language-java">languages</code> collection:</p>
+<pre><code class="language-java">for (String lang : languages) {
+    System.out.println(lang);
+}</code></pre>
+<p>This code prints all elements of this collection.</p>
+<pre><code class="language-java">English
+Deutsch
+Français</code></pre>
+<p>The order of elements when iterating depends on the type of particular collection that is actually being used.</p>
+<p>If you are already familiar with method references or<em> </em>lambda expressions, you can use another style for iterations using the <code class="language-java">forEach(Consumer&lt;T&gt; consumer)</code> method:</p>
+<pre><code class="language-java">languages.forEach(System.out::println); // with method reference
+languages.forEach(elem -&gt; System.out.println(elem)); // with lambda expression</code></pre>
+<ul>
+</ul>
+<p>This looks very readable but is optional for use.</p>
+<h5 id="removing-elements" style="text-align: center;">Removing elements</h5>
+<p>It is also possible to remove elements from a mutable collection (like <code class="language-java">ArrayList</code>).</p>
+<pre><code class="language-java">languages.remove("Deutsch");
+
+System.out.println(languages.size()); // 2</code></pre>
+<p></p><div class="alert alert-primary">Note, the <code class="language-java">remove</code> as well as the <code class="language-java">contains</code> methods rely on the method <code class="language-java">equals</code> of the elements. If you store non-standard classes in the collection, <code class="language-java">equals</code> together with <code class="language-java">hashCode</code> should be overridden.</div><p></p>
+<p>Again, if you are already familiar with lambda expressions, you can invoke the <code class="language-java">removeIf</code> method to remove all of the elements that satisfy the given predicate:</p>
+<pre><code class="language-java">languages.removeIf(lang -&gt; lang.startsWith("E")); // it removes English
+
+System.out.println(languages.size()); // 1</code></pre>
+<p>Use any way you like.</p>
+<h5 id="conclusion" style="text-align: center;">Conclusion</h5>
+<p>Java collections framework<strong> </strong>provides a set of interfaces with common methods for different types of collections. We've considered the <code class="language-java">Collection&lt;E&gt;</code> interface which is an abstract container for storing values of the same type. Any particular collection (excluding maps) can be used through it in a program and can be iterated through by using the <em>for-each</em> loop or the <code class="language-java">forEach</code> method.</p>
+<p>For now, we confine ourselves to this much. All other interfaces including <code class="language-java">Map&lt;K,V&gt;</code> will be considered in the following topics.</p></body></html>

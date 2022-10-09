@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: 'To override a method, the method signature in the subclass must be the same
+    as in the superclass. '
+- text: Private methods can be overridden.
+- text: To override a method, it's required to write <b>@Override</b> annotation.
+- text: A static method cannot be overridden but can be hidden.
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2002#comment
+status: Solved
+record: -1
+local_check: false

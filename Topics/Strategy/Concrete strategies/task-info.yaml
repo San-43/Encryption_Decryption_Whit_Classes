@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Concrete strategies cannot have fields and constructors.
+- text: Concrete strategies can be set at run-time.
+- text: Concrete strategies depend on client code.
+- text: 'Concrete strategies implement a common interface. '
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3330#comment
+status: Solved
+record: -1
+local_check: false

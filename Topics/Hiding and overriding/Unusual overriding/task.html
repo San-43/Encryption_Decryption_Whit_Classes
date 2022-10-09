@@ -1,0 +1,39 @@
+<h2>Unusual overriding</h2>
+<p>Here's a class and its subclass:</p>
+
+<p> </p>
+
+<pre><code class="language-java">class A {
+    
+    public static void doA() { }
+    
+    private void doB() { }
+    
+    public int doC(int k) { return k; }
+    
+    public void doD() { }
+    
+    protected void doE() { }
+}
+
+
+class B extends A {
+    
+    @Override
+    public void doA() { }
+    
+    @Override
+    public void doB() { }
+    
+    @Override
+    public int doC(int q) { return q * q; }
+    
+    @Override
+    protected void doD() { }
+    
+    public final void doE() { }
+}</code></pre>
+
+<p> </p>
+
+<p>Select all methods of the class <code class="language-java">A</code> that are correctly overridden in the class <code class="language-java">B</code>.</p>

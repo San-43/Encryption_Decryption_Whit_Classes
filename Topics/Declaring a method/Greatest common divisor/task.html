@@ -1,0 +1,11 @@
+<h2>Greatest common divisor</h2>
+<html><body><p>The following method implements an algorithm to find <a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" rel="nofollow noopener noreferrer" target="_blank" title="Link: https://en.wikipedia.org/wiki/Greatest_common_divisor">the greatest common divisor</a> (GCD) of two positive numbers.</p>
+<pre><code class="language-java">public static int gcd(int a, int b) {
+    while (b &gt; 0) {
+        int c = a % b;
+        a = b;
+        b = c;
+    }
+    return a;
+}</code></pre>
+<p>Now it does not matter if you know the GCD. Try to execute this algorithm yourself and select all the correct results produced by the algorithm.</p></body></html>

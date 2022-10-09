@@ -1,0 +1,8 @@
+content:
+- Theory
+- Reusing code with Object
+- What is wrong
+- Initialize an object of a generic class
+- Instance without type argument
+- Correct the usage of non-generic class
+- Boxes are not just objects

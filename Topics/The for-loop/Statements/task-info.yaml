@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: The for loop can't be infinite.
+- text: The most common form of the loop has an initialization, a termination condition,
+    a post-processing statement, and a body.
+- text: ' The for loop can be nested inside another.'
+- text: The body is an obligatory part of the for loop.
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/1999#comment
+status: Solved
+record: -1
+local_check: true

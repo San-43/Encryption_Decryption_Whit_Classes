@@ -1,0 +1,112 @@
+<h2>Factory method</h2>
+<html><body><p>If you want to understand factory patterns, the <strong>Factory Method</strong><em> </em><strong>pattern</strong> is a good place to start. It is probably the simplest one and the easiest to implement. </p>
+<p>Imagine a situation where you are the CEO of a factory. You are lucky to have a qualified engineer in your team who can create any type of product at your factory provided the specification: TYPE_A<em> </em>or TYPE_B<em>. </em>This is what the Factory Method<em> </em>design pattern is about.</p>
+<p>This pattern defines an interface for creating an object but leaves it to the subclasses to decide which class to instantiate. Simply put, the Factory Method allows the class to delegate instantiation to subclasses. The goal of any fabric is to relieve a client from the task of creating class instances or class hierarhy. Factory Method is a special case of the <strong>Template Method pattern</strong>, the variable step responsible for creating the desired type of object.</p>
+<h5 id="the-structure-of-factory-method">The structure of Factory Method</h5>
+<p>The Factory Method pattern has the following components:</p>
+<ul>
+<li><code class="language-java">Creator</code>;</li>
+<li><code class="language-java">ConcreteCreator</code>;</li>
+<li><code class="language-java">Product</code>;</li>
+<li><code class="language-java">ConcreteProduct</code>.</li>
+</ul>
+<p><img alt="" height="543" src="https://ucarecdn.com/7ddd67b8-4b2d-455e-b27c-42aab7213234/" width="895"/></p>
+<p>These components carry out different functions: </p>
+<ol>
+<li><strong>Creator</strong> declares an abstract or virtual method of creating a product. It uses the factory method in its implementation. Some of the examples are <code class="language-java">HeroFactory</code>, <code class="language-java">MusicFactory</code>, <code class="language-java">FurnitureFactory</code>, <code class="language-java">DBFactory</code>.</li>
+<li><strong>ConcreteCreator</strong> implements a factory method that returns <code class="language-java">ConcreteProduct</code>. For example, <code class="language-java">RockMusicFactory</code>, <code class="language-java">DoorFurnitureFactory</code>, <code class="language-java">MongoDBFactory</code>.</li>
+<li><strong>Product</strong> defines the interface of products created by the factory method. For example, <code class="language-java">Robot</code>, <code class="language-java">Detail</code>, <code class="language-java">Transport</code>, <code class="language-java">Hero</code>, <code class="language-java">File</code>, <code class="language-java">Furniture</code>.</li>
+<li><strong>ConcreteProduct</strong> determines a specific type of products, such as <code class="language-java">RobotCleaner</code>, <code class="language-java">ElfHero</code>, <code class="language-java">MP3File</code>, <code class="language-java">Detail13</code>.</li>
+</ol>
+<p>The pattern is available in JDK in <code class="language-java">java.util</code>, <code class="language-java">java.io</code> and <code class="language-java">javax.persistence</code>.</p>
+<h5 id="practice-example">Practice example</h5>
+<p>Let's make our abstract example from the beginning a little more concrete and detailed. As you remember, you are the CEO of a factory. Suppose the factory makes tables: they are truly indispensable in the house. You work with a qualified employee, an engineer, who, as you might have guessed, is your factory method.</p>
+<p>First, let's define the abstract class <code class="language-java">Table</code><em>:</em></p>
+<pre><code class="language-java">abstract class Table {
+    private String name;
+
+    Table(String name) {
+        this.name = name;
+    }
+
+    String getName() {
+        return name;
+    }
+
+    void attachLegs() {
+        System.out.println("Attaching Legs");
+    }
+
+    void attachTableTop() {
+        System.out.println("Attaching tabletop");
+    }
+}</code></pre>
+<p>Second, we should define two specific tables: the <code class="language-java">TableOffice</code><em> </em>and <code class="language-java">TableKitchen</code> classes. Note that the abstract class has a constructor, which is sometimes tricky for Java developers with little experience. </p>
+<pre><code class="language-java">class TableOffice extends Table {
+    TableOffice(String name) {
+        super(name);
+    }
+}
+
+class TableKitchen extends Table {
+    TableKitchen(String name) {
+        super(name);
+    }
+}</code></pre>
+<p>Third, let's create our factory. We called it <code class="language-java">TableStore</code><em>, </em>the implementation of the abstract <code class="language-java">TableFactory</code><em>: </em></p>
+<pre><code class="language-java">abstract class TableFactory {
+
+    abstract Table createTable(String type);
+
+    Table orderTable(String type) {
+        Table table = createTable(type);
+        if (table == null) {
+            System.out.println("Sorry, we are not able to create this kind of table\n");
+            return null;
+        }
+        System.out.println("Making " + table.getName());
+        table.attachLegs();
+        table.attachTableTop();
+        System.out.println("Created " + table.getName() + "\n");
+        return table;
+    }
+}
+
+class TableStore extends TableFactory {
+    @Override
+    Table createTable(String type) {
+        if (type.equals("office")) {
+            return new TableOffice("Office Table");
+        } else if (type.equals("kitchen")) {
+            return new TableKitchen("Kitchen Table");
+        } else return null;
+    }
+}</code></pre>
+<p>Finally, here is our <code class="language-java">TestDrive</code><em> </em>code and the output: </p>
+<pre><code class="language-java">class TestDrive {
+    public static void main(String[] args) {
+        TableStore tableStore = new TableStore();
+        Table strangeTable = tableStore.orderTable("Mysterious table");
+        Table officeTable = tableStore.orderTable("office");
+        Table kitchenTable = tableStore.orderTable("kitchen");
+    }
+}</code></pre>
+<pre><code class="language-no-highlight">Sorry, we are unable to create this kind of table
+
+Making Office Table
+Attaching Legs
+Attaching tabletop
+Created Office Table
+
+Making Kitchen Table
+Attaching Legs
+Attaching tabletop
+Created Kitchen Table</code></pre>
+<h5 id="conclusion">Conclusion</h5>
+<p>The Factory Method pattern comes in handy in situations when you need to:</p>
+<ul>
+<li>deal with a complicated process of constructing objects;</li>
+<li>reduce the time for adding another product;</li>
+<li>replace one product with another.<br/>
+</li>
+</ul></body></html>

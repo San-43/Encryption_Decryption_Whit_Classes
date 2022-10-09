@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: News news = new News();
+- text: News news = new News("A title", "A text");
+- text: New news = new News("A title", "A text", new String[]{"PROGRAMMING", "JAVA"});
+- text: New news = new News("A title");
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2987#comment
+status: Solved
+record: -1
+local_check: false

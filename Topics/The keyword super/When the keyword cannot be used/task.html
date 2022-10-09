@@ -1,0 +1,31 @@
+<h2>When the keyword cannot be used</h2>
+<p>Given the following class hierarchy, select all <strong>illegal</strong> usages of the keyword <code class="language-java">super</code>:</p>
+
+<pre><code class="language-java">class A {
+
+    protected int a;
+}
+
+class B extends A {
+
+    protected int b;
+    
+    public B(int a, int b) {
+        super();     // 1
+        super.a = a; // 2
+        super.b = b; // 3
+    }
+}
+
+class C extends B {
+
+    protected int c;
+
+    public C(int a, int b) {
+        super(a); // 4
+    }
+    
+    public C(int a) {
+        super(a, 10); // 5
+    }
+}</code></pre>

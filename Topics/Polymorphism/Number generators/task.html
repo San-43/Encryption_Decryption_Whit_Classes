@@ -1,0 +1,56 @@
+<h2>Number generators</h2>
+<p>Here's a class hierarchy of magic number generators.</p>
+
+<pre><code class="language-java">class BaseNumberGenerator {
+    
+    protected int base;
+    
+    public BaseNumberGenerator(int base) {
+        this.base = base;
+    }
+    
+    public int generate() {
+        return base + 11;
+    }
+}
+
+class NumberGenerator extends BaseNumberGenerator {
+    
+    
+    public NumberGenerator(int base) {
+        super(base);
+    }
+    
+    @Override
+    public int generate() {
+        
+        return super.generate() + getNumber();
+    }
+    
+    
+    protected int getNumber() {
+        return this.base - 7;
+    }
+}
+
+class MagicNumberGenerator extends NumberGenerator {
+    
+    
+    public MagicNumberGenerator(int base) {
+        super(base);
+    }
+    
+    @Override
+    protected int getNumber() {
+        return this.base + 7;
+    }
+}</code></pre>
+
+<p> </p>
+
+<p>You have an instance:</p>
+
+<pre><code class="language-java">BaseNumberGenerator generator = new MagicNumberGenerator(10);
+</code></pre>
+
+<p>Enter the result of invoking <code class="language-java">generator.generate()</code>.</p>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":Topics-The_for-loop-Numbers_divisible_by_six:main" external.linked.project.path="$MODULE_DIR$/../../../../../Topics/The for-loop/Numbers divisible by six" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.group="Encryption-Decryption1" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../../../../../Topics/The for-loop/Numbers divisible by six/build/classes/java/main" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../Topics/The for-loop/Numbers divisible by six/src">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../../Topics/The for-loop/Numbers divisible by six/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

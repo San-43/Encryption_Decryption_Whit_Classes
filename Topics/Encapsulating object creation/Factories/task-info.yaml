@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: Instead of using the <b>new</b> operator, clients receive objects from factories.
+- text: There are several types of factories.
+- text: A factory always has only a single method.
+- text: A method of a factory always returns an abstract class, not a concrete one.
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3323#comment
+status: Solved
+record: -1
+local_check: false

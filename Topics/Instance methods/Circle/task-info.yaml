@@ -1,0 +1,18 @@
+type: code
+files:
+- name: src/Main.java
+  visible: true
+  text: |-
+    class Circle {
+
+        double radius;
+
+        // write methods here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2955#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sat, 09 Jul 2022 21:47:49 UTC
+record: -1

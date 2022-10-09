@@ -1,0 +1,35 @@
+<h2>Rewrite compareTo method</h2>
+<p>Let's rewrite our code from the topic. Change it so that the natural ordering will sort elements by their numbers and also by their models.</p>
+
+<pre><code class="language-java">public class Car implements Comparable&lt;Car&gt; {
+    private int number;
+    private String model;
+    private String color;
+    private int weight;
+
+    // constructor
+
+    // getters, setters
+
+    @Override
+    public int compareTo(Car otherCar) {
+        // change it!
+        return Integer.valueOf(getNumber()).compareTo(otherCar.getNumber());
+    }
+
+}</code></pre>
+
+<p> </p>
+
+<pre><code class="language-java">public static void main(String[] args) {
+    List&lt;Car&gt; cars = new ArrayList&lt;&gt;();
+    Car car1 = new Car(876, "Volvo", "white", 1400);
+    Car car2 = new Car(345, "Mercedes", "black", 2000);
+    Car car3 = new Car(470, "BMW", "blue", 1800);
+    cars.add(car1);
+    cars.add(car2);
+    cars.add(car3);
+
+    Collections.sort(cars);
+    System.out.println(cars);
+}</code></pre>

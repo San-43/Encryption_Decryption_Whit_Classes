@@ -1,0 +1,17 @@
+<html><body><h5 id="description">Description</h5>
+<p>Extend your program by adding different algorithms for encoding/decoding. The first one is the shifting algorithm — it shifts each letter by the specified number according to its order in the alphabet. The second one is based on the Unicode table, like in the previous stage.</p>
+<h5 id="objectives">Objectives</h5>
+<p>When starting the program, the necessary algorithm should be specified by an argument (<code class="java">-alg</code>). Name the first algorithm as <code class="java">shift</code>, the second one as <code class="java">unicode</code>. If there is no <code class="java">-alg</code> argument, default it to <code class="java">shift</code>.</p>
+<p>Remember that in case of <code class="java">shift</code>, encode only English letters — from "a" to "z" and from "A" to "Z". In other words, after "z" comes "a", after "Z" comes "A".</p>
+<p>To complete this stage, we recommend you create a set of classes and interfaces for encryption and decryption algorithms.</p>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1: </strong><em>reading and writing to files; the arguments are: -mode enc -in road_to_treasure.txt -out protected.txt -key 5 -alg unicode</em></p>
+<p><em>This command must get data from road_to_treasure.txt, encrypt the data with the key of 5, create protected.txt, and write ciphertext into it.</em></p>
+<p><strong>Example 2: </strong><em>encryption with the unicode algorithm; the arguments are: -mode enc -key 5 -data "Welcome to hyperskill!" -alg unicode</em></p>
+<pre><code class="java">\jqhtrj%yt%m~ujwxpnqq&amp;</code></pre>
+<p><strong>Example 3: </strong><em>decryption with the unicode algorithm; the arguments are:</em> <em>-key 5 -alg unicode -data "\jqhtrj%yt%m~ujwxpnqq&amp;" -mode dec</em></p>
+<pre><code class="java">Welcome to hyperskill!</code></pre>
+<p><strong>Example 4: </strong><em>encryption with the shift algorithm; the arguments are: -key 5 -alg shift -data "Welcome to hyperskill!" -mode enc</em></p>
+<pre><code class="language-no-highlight">Bjqhtrj yt mdujwxpnqq!</code></pre>
+<p><strong>Example 5: </strong><em>decryption with the shift algorithm; the arguments are: -key 5 -alg shift -data "Bjqhtrj yt mdujwxpnqq!" -mode dec</em></p>
+<pre><code class="language-no-highlight">Welcome to hyperskill!</code></pre></body></html>

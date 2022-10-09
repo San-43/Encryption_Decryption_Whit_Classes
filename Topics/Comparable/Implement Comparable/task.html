@@ -1,0 +1,82 @@
+<h2>Implement Comparable</h2>
+<p>Imagine you write a simple class called <code class="language-java">Cake</code>:</p>
+
+<pre><code class="language-java">public class Cake {
+    private String name;
+    private String description;
+    private int weight;
+
+    // constructor
+
+    // getters and setters
+}
+</code></pre>
+
+<p>You want to define the ordering by name. Which of the examples below is correct?</p>
+
+<ol>
+	<li>
+	<pre><code class="language-java">public class Cake {
+    private String name;
+    private String description;
+    private int weight;
+
+    // constructor
+
+    // getters and setters
+
+    @Override
+    public int compareTo(Cake otherCake) {
+        return getName().compareTo(otherCake.getName());
+    }
+}</code></pre>
+	</li>
+	<li>
+	<pre><code class="language-java">public class Cake implements Comparable&lt;Cake&gt; {
+    private String name;
+    private String description;
+    private int weight;
+
+    // constructor
+
+    // getters and setters
+
+    @Override
+    public int compareTo(Cake otherCake) {
+        return getName().compareTo(otherCake.getName());
+    }
+}</code></pre>
+	</li>
+	<li>
+	<pre><code class="language-java">public class Cake implements Comparable&lt;Cake&gt; {
+    private String name;
+    private String description;
+    private int weight;
+
+    // constructor
+
+    // getters and setters
+
+    @Override
+    public int compareTo(Cake cake, Cake otherCake) {
+        return cake.getName().compareTo(otherCake.getName());
+    }
+}</code></pre>
+	</li>
+	<li>
+	<pre><code class="language-java">public class Cake implements Comparable&lt;Cake&gt; {
+    private String name;
+    private String description;
+    private int weight;
+
+    // constructor
+
+    // getters and setters
+
+    @Override
+    public int compareTo(Cake otherCake) {
+        return otherCake.getName().compareTo(getName());
+    }
+}</code></pre>
+	</li>
+</ol>

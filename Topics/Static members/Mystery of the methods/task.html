@@ -1,0 +1,25 @@
+<h2>Mystery of the methods</h2>
+<p>You are given a class containing static and instance field and methods:</p>
+
+<pre><code class="language-java">class MyClass {
+
+    static int field = 10;
+
+    public MyClass() {
+        method2(); // (1)
+    }
+
+    void method1() { 
+        method2(); // (2)
+    } 
+
+    static void method2() { 
+        this.method3(); // (3)
+    }
+
+    void method3() { 
+        System.out.println(field); // (4)
+    }
+}</code></pre>
+
+<p>Select all commented lines of code that won't raise a compilation error.</p>

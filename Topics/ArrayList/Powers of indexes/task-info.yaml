@@ -1,0 +1,23 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: It is possible to get an element by its index
+- text: The first element has the index 0
+- text: The last element has the index equal to the size of an ArrayList
+- text: It is impossible to add an element to the specified position (by index)
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3487#comment
+status: Solved
+record: -1
+local_check: false

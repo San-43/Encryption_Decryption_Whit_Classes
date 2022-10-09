@@ -1,0 +1,24 @@
+type: choice
+is_multiple_choice: true
+options:
+- text: public instance methods
+- text: public static methods
+- text: final methods
+- text: overloaded methods
+- text: private instance methods
+files:
+- name: src/Task.java
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    public class Task {
+      public static void main(String[] args) {
+        // put your code here
+      }
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/3400#comment
+status: Solved
+record: -1
+local_check: false

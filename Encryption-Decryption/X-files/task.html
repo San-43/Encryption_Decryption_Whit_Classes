@@ -1,0 +1,20 @@
+<html><body><h5 id="description">Description</h5>
+<p>In this stage, add the ability to read and write the original and cipher data into files.</p>
+<h5 id="objectives">Objectives</h5>
+<p>The program must parse two additional arguments <code class="java">-in</code> and <code class="java">-out</code> to specify the full name of a file to read the data and write the result. Arguments <code class="java">-mode</code>, <code class="java">-key</code>, and <code class="java">-data</code> must work as before.</p>
+<p>Your program should read data from <code class="java">-data</code> or from a file specified in the <code class="java">-in</code> argument. That's the reason why you can't have both <code class="java">-data</code> and <code class="java">-in</code> arguments simultaneously.</p>
+<ol>
+<li>If there is no <code class="java">-mode</code>, the program should work in the <code class="java">enc</code> mode;</li>
+<li>If there is no <code class="java">-key</code>, the program should consider that <code class="java">key</code> is <code class="java">0</code>;</li>
+<li>If there is no <code class="java">-data</code> and no <code class="java">-in</code> the program should assume that the data is an empty string;</li>
+<li>If there is no <code class="java">-out</code> argument, the program must print data to the standard output;</li>
+<li>If there are both <code class="java">-data</code> and <code class="java">-in</code> arguments, your program should prefer <code class="java">-data</code> over <code class="java">-in</code>.</li>
+</ol>
+<p>If there is something strange (an input file does not exist, or an argument doesn't have a value), the program should not fail. Instead, it must display a clear message about the problem and stop successfully. The message should contain the word <code class="java">Error</code>. <strong><span style="color: #ff4363;">so the program checks only the word "error"?</span></strong></p>
+<h5 id="examples">Examples</h5>
+<p><strong>Example 1:</strong> <em>reading and writing to files; the arguments are:</em> <em>-mode enc -in road_to_treasure.txt -out protected.txt -key 5</em></p>
+<p><em>The program must get data from road_to_treasure.txt, encrypt the data with key 5, create a file called protected.txt, and write ciphertext to it.</em></p>
+<p><strong>Example 2: </strong><em>encryption; the arguments are -mode enc -key 5 -data "Welcome to hyperskill!"</em></p>
+<pre><code class="java">\jqhtrj%yt%m~ujwxpnqq&amp;</code></pre>
+<p><strong>Example 3: </strong><em>decryption; the arguments are -key 5 -data "\jqhtrj%yt%m~ujwxpnqq&amp;" -mode dec</em></p>
+<pre><code class="java">Welcome to hyperskill!</code></pre></body></html>

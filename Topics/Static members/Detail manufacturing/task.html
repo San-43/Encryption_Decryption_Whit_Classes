@@ -1,0 +1,35 @@
+<h2>Detail manufacturing</h2>
+
+John decided to create a manufacturing firm. It produces various, mainly mechanical details. John wants to automate details producing requests, but sadly he cannot write code. He asks you to write a simple manufacturing controller.</p>
+
+<p>You are given two methods, <code class="language-java">requestProduct</code> and <code class="language-java">getNumberOfProducts</code>:</p>
+
+<ol>
+	<li><code class="language-java">getNumberOfProducts</code> should return the total number of requested products;</li>
+	<li><code class="language-java">requestProduct</code> should keep track of requested products, and format the product argument in the format: <code class="language-java">No. Requested Detail</code>.</li>
+</ol>
+
+<p><br>
+For example:</p>
+
+<pre><code class="language-java">ManufacturingController.requestProduct("detail 1");</code></pre>
+
+<p>should return:</p>
+
+<pre><code class="language-no-highlight">1. Requested detail 1</code></pre>
+
+<p>and</p>
+
+<pre><code class="language-java">ManufacturingController.requestProduct("Wrench");</code></pre>
+
+<p>should return:</p>
+
+<pre><code class="language-no-highlight">2. Requested Wrench</code></pre>
+
+<p>After execution of these two commands,</p>
+
+<pre><code class="language-java">ManufacturingController.getNumberOfProducts();</code></pre>
+
+<p>should return:</p>
+
+<pre><code class="language-no-highlight">2</code></pre><br><br><font color="gray">Memory limit: 256 MB</font><br><font color="gray">Time limit: 5 seconds</font><br><br>
